@@ -32,4 +32,4 @@ The config plugin supports several configuration options. All of them are option
 
 _Work in progress... Feel free to contribute!_
 
-Finally, rebuild your development client and proceed with [the Google Drive configuration](./configure-google-drive).
+Finally, rebuild your development client.
