@@ -12,8 +12,8 @@ const pkg: { name: string; version?: string } = {
 const withRNReshared: ConfigPlugin<ResharedConfigPluginOptions> = createRunOncePlugin(
   (config, options) => {
     return withPlugins(config, [
-      () => withRNResharedIos(config, options.ios),
-      () => withRNResharedAndroid(config, options.android),
+      () => withRNResharedIos(config, options?.ios),
+      () => withRNResharedAndroid(config, options?.android),
     ]);
   },
   pkg.name,
