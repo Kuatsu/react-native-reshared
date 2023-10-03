@@ -29,6 +29,7 @@
   ],
   "scripts": {
     "example": "yarn workspace react-native-reshared-example",
+    "docs": "yarn workspace react-native-reshared-docs",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -85,7 +86,8 @@
     "react-native": "*"
   },
   "workspaces": [
-    "example"
+    "example",
+    "docs"
   ],
   "packageManager": "yarn@3.6.1",
   "engines": {
