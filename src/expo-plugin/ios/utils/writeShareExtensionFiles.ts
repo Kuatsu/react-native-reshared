@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs';
 import plist from '@expo/plist';
-
 import {
   shareExtensionName,
   getAppGroups,
@@ -10,13 +9,13 @@ import {
   shareExtensionStoryBoardFileName,
   shareExtensionViewControllerFileName,
 } from './constants';
-import type { RNCloudStorageConfigPluginOptions } from './types';
+import type { ResharedConfigPluginOptions } from '../../types';
 
 export async function writeShareExtensionFiles(
   platformProjectRoot: string,
   scheme: string,
   appIdentifier: string,
-  activationRules?: NonNullable<RNCloudStorageConfigPluginOptions>['activationRules']
+  activationRules?: NonNullable<ResharedConfigPluginOptions['ios']>['activationRules']
 ) {
   const infoPlistFilePath = getShareExtensionInfoFilePath(platformProjectRoot);
   const infoPlistContent = getShareExtensionInfoContent(activationRules);
@@ -57,7 +56,7 @@ export function getShareExtensionInfoFilePath(platformProjectRoot: string) {
 }
 
 export function getShareExtensionInfoContent(
-  activationRules?: NonNullable<RNCloudStorageConfigPluginOptions>['activationRules']
+  activationRules?: NonNullable<ResharedConfigPluginOptions['ios']>['activationRules']
 ) {
   return plist.build({
     CFBundleName: '$(PRODUCT_NAME)',

@@ -13,12 +13,12 @@ const useSharedContent = (scheme: string) => {
     hook subscribers will be notified again. */
     const subscription = AppState.addEventListener('change', (nextAppState) => {
       if (appState.current === 'active' && ['inactive', 'background'].includes(nextAppState)) {
-        console.log('useSharedContent[to-background] reset intent');
         setSharedContent(null);
       }
 
       appState.current = nextAppState;
     });
+
     return () => {
       subscription.remove();
     };

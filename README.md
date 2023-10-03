@@ -58,12 +58,13 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 ## Attribution
 
-This project is heavily based on two great, sadly unmaintained libraries:
+This project is heavily based on some great, though mostly unmaintained libraries:
 
 - [react-native-receive-sharing-intent](https://github.com/ajith-ab/react-native-receive-sharing-intent)
 - [expo-config-plugin-ios-share-extension](https://github.com/timedtext/expo-config-plugin-ios-share-extension)
+- [expo-share-intent-demo](https://github.com/achorein/expo-share-intent-demo)
 
-The codebases of both libraries were used as a starting point for this project. They have been merged together, updated, cleaned up, documented and extended with new features.
+The codebases of these libraries were used as a starting point for this project. They have been merged together, updated, cleaned up, documented and extended with new features.
 
 ## License
 

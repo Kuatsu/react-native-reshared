@@ -8,19 +8,26 @@ import {
   getShareExtensionViewControllerPath,
   writeShareExtensionFiles,
 } from './utils/writeShareExtensionFiles';
-import type { RNCloudStorageConfigPluginOptions } from './utils/types';
+import type { ResharedConfigPluginOptions } from '../types';
 
-export const withShareExtensionXcodeTarget: ConfigPlugin<RNCloudStorageConfigPluginOptions> = (pureConfig, options) => {
+export const withShareExtensionXcodeTarget: ConfigPlugin<ResharedConfigPluginOptions['ios']> = (
+  pureConfig,
+  options
+) => {
   return withXcodeProject(pureConfig, async (config) => {
     if (!config.scheme || (Array.isArray(config.scheme) && !config.scheme.length)) {
-      throw new Error(`Cannot configure the iOS share extension without a scheme configured in the Expo config.`);
+      throw new Error(
+        `Reshared: Cannot configure the iOS share extension without a scheme configured in the Expo config.`
+      );
     }
     if (!config.version) {
-      throw new Error(`Cannot configure the iOS share extension without a version configured in the Expo config.`);
+      throw new Error(
+        `Reshared: Cannot configure the iOS share extension without a version configured in the Expo config.`
+      );
     }
     if (!config.ios?.bundleIdentifier || !config.ios?.buildNumber) {
       throw new Error(
-        `Cannot configure the iOS share extension without an iOS bundleIdentifier and buildNumber configured in the Expo config.`
+        `Reshared: Cannot configure the iOS share extension without an iOS bundleIdentifier and buildNumber configured in the Expo config.`
       );
     }
 
