@@ -15,13 +15,13 @@ public class ResharedModule extends ReactContextBaseJavaModule {
   public final String Log_Tag = "Reshared";
 
   private final ReactApplicationContext reactContext;
-  private ReceiveSharingIntentHelper receiveSharingIntentHelper;
+  private ResharedHelper resharedHelper;
 
-  public ReceiveSharingIntentModule(ReactApplicationContext reactContext) {
+  public ResharedModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
     Application applicationContext = (Application) reactContext.getApplicationContext();
-    receiveSharingIntentHelper = new ReceiveSharingIntentHelper(applicationContext);
+    resharedHelper = new ResharedHelper(applicationContext);
   }
 
   protected void onNewIntent(Intent intent) {
@@ -36,7 +36,7 @@ public class ResharedModule extends ReactContextBaseJavaModule {
     Activity mActivity = getCurrentActivity();
     if(mActivity == null) { return; }
     Intent intent = mActivity.getIntent();
-    receiveSharingIntentHelper.sendFileNames(reactContext, intent, promise);
+    resharedHelper.sendFileNames(reactContext, intent, promise);
     mActivity.setIntent(null);
   }
 
@@ -45,7 +45,7 @@ public class ResharedModule extends ReactContextBaseJavaModule {
     Activity mActivity = getCurrentActivity();
     if(mActivity == null) { return; }
     Intent intent = mActivity.getIntent();
-    receiveSharingIntentHelper.clearFileNames(intent);
+    resharedHelper.clearFileNames(intent);
   }
 
   @Override

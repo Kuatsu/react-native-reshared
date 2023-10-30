@@ -18,11 +18,11 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class ReceiveSharingIntentHelper {
+public class ResharedHelper {
 
   private Context context;
 
-  public ReceiveSharingIntentHelper(Application context){
+  public ResharedHelper(Application context){
     this.context = context;
   }
 
