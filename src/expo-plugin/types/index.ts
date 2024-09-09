@@ -7,6 +7,8 @@ export type ResharedConfigPluginOptions = {
       NSExtensionActivationSupportsWebPageWithMaxCount?: number;
       NSExtensionActivationSupportsImageWithMaxCount?: number;
       NSExtensionActivationSupportsMovieWithMaxCount?: number;
+      NSExtensionActivationSupportsFileWithMaxCount?: number;
+      NSExtensionActivationSupportsText?: boolean;
     };
   };
   android?: {
