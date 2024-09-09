@@ -7,7 +7,7 @@ sidebar_position: 1
 The `useSharedContent` provides the content that's been shared with your app.
 
 ```ts
-import { useSharedContent } from { react-native-reshared };
+import { useSharedContent } from 'react-native-reshared';
 ```
 
 ## API
