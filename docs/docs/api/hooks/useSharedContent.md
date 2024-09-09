@@ -26,7 +26,7 @@ The returned object is reset to `null` whenever the app is backgrounded so that,
 
 ```tsx
 import React, { useState, useEffect } from 'react';
-import { useSharedContent } from { react-native-reshared };
+import { useSharedContent } from 'react-native-reshared';
 
 const App: React.FC = () => {
   const sharedContent = useSharedContent('myapp'); // Replace with your custom scheme
@@ -35,18 +35,19 @@ const App: React.FC = () => {
     <View>
       <Text>{JSON.stringify(sharedContent)}</Text>
     </View>
-  )
-}
+  );
+};
 ```
 
 ### Expo
 
 ```tsx
 import React, { useState, useEffect } from 'react';
-import { useSharedContent } from { react-native-reshared };
+import { useSharedContent } from 'react-native-reshared';
 import Constants from 'expo-constants';
 
-const SCHEME = (Array.isArray(Constants.expoConfig?.scheme) ? Constants.expoConfig?.scheme[0] : Constants.expoConfig?.scheme) ?? ';
+const SCHEME =
+  (Array.isArray(Constants.expoConfig?.scheme) ? Constants.expoConfig?.scheme[0] : Constants.expoConfig?.scheme) ?? '';
 const App: React.FC = () => {
   const sharedContent = useSharedContent(SCHEME);
 
@@ -54,6 +55,6 @@ const App: React.FC = () => {
     <View>
       <Text>{JSON.stringify(sharedContent)}</Text>
     </View>
-  )
-}
+  );
+};
 ```

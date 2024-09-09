@@ -20,4 +20,4 @@ enum SharedContentType {
 }
 ```
 
-When using pure JavaScript, simply use the appropriate values instead.
+When using pure JavaScript, simply use the corresponding string values instead.

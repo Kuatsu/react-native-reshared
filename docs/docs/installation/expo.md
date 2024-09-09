@@ -18,11 +18,16 @@ npm install react-native-reshared
 yarn add react-native-reshared
 ```
 
-Because this library needs to make native code changes at build time, you will need to use an [Expo development client](https://docs.expo.dev/development/create-development-builds/). In order to make the necessary changes, this library provides an Expo config plugin. To use it, simply add the library to the `plugins` section of your `app.json`:
+Because this library needs to make native code changes at build time, you will need to use an [Expo development client](https://docs.expo.dev/development/create-development-builds/). In order to make the necessary changes, this library provides an Expo config plugin. To use it, simply add the library to the `plugins` section of your `app.json` (see below). Your `app.json` will also need to have a version, a scheme and an iOS build number configured:
 
 ```json
 {
   "expo": {
+    "version": "1.0.0",
+    "scheme": "your-scheme",
+    "ios": {
+      "buildNumber": "1"
+    },
     "plugins": ["react-native-reshared"]
   }
 }
