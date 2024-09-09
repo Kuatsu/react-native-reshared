@@ -58,7 +58,7 @@ export const getMimeType = (file: string) => {
   const ext = getExtension(file);
   const extension = '.' + ext.toLowerCase();
   const type = Object.entries(EXTENSION_MIMETYPES).find((mime) => mime[0] === extension);
-  if (type) return type[0];
+  if (type) return type[1];
   return null;
 };
 
