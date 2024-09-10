@@ -3,7 +3,14 @@ on:
   push:
     branches:
       - master
-
+    paths:
+      - 'src/**'
+      - 'ios/**'
+      - 'android/**'
+      - 'app.plugin.json'
+      - 'package.json'
+      - 'yarn.lock'
+      - '*.podspec'
 jobs:
   lint:
     runs-on: ubuntu-latest
