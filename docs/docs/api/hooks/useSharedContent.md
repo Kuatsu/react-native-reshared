@@ -14,7 +14,7 @@ import { useSharedContent } from 'react-native-reshared';
 
 **Parameters**:
 
-- `scheme` (`string`): Required. The custom scheme of your app. When using Expo, this is the `scheme` property of your `app.json`. You can access it using Expo Constants: `Constants.expoConfig?.scheme`.
+- `scheme` (`string`): Required. The custom URL scheme of your app. When using Expo, this is the `scheme` property of your `app.json`. You can access it using Expo Constants: `Constants.expoConfig?.scheme`.
 
 **Returns**: An object that implements the [`SharedContent`](../interfaces/SharedContent) interface, or `null` if no content has been shared.
 
