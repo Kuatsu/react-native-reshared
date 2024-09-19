@@ -11,6 +11,7 @@ on:
       - 'package.json'
       - 'yarn.lock'
       - '*.podspec'
+  workflow_dispatch:
 jobs:
   lint:
     runs-on: ubuntu-latest
