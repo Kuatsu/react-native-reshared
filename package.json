@@ -1,6 +1,6 @@
 {
   "name": "react-native-reshared",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Receive share intents to your React Native app from iOS & Android – fully compatible with Expo",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
