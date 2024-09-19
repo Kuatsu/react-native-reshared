@@ -39,13 +39,26 @@ The config plugin supports several configuration options. All of them are option
 
 ### iOS (`ios` parent key)
 
-- `activationRules`: An object containing activation rules for the iOS share extension. Refer to [Apple's documentation](https://developer.apple.com/documentation/bundleresources/information_property_list/nsextension/nsextensionattributes/nsextensionactivationrule) for more details.
-  - `NSExtensionActivationSupportsWebURLWithMaxCount`: (number) Maximum number of web URLs supported.
-  - `NSExtensionActivationSupportsWebPageWithMaxCount`: (number) Maximum number of web pages supported.
-  - `NSExtensionActivationSupportsImageWithMaxCount`: (number) Maximum number of images supported.
-  - `NSExtensionActivationSupportsMovieWithMaxCount`: (number) Maximum number of movies supported.
-  - `NSExtensionActivationSupportsFileWithMaxCount`: (number) Maximum number of files supported.
-  - `NSExtensionActivationSupportsText`: (boolean) Whether text sharing is supported.
+- `activationRules`: Can either be an object containing `NSExtensionActivationSupports*` activation rules from [Apple's documentation](https://developer.apple.com/documentation/bundleresources/information_property_list/nsextension/nsextensionattributes/nsextensionactivationrule), or a string that defines a more granular activation rule using `SUBQUERY`.
+
+When using an object, you can use the following keys:
+
+- `NSExtensionActivationSupportsWebURLWithMaxCount`: (number) Maximum number of web URLs supported.
+- `NSExtensionActivationSupportsWebPageWithMaxCount`: (number) Maximum number of web pages supported.
+- `NSExtensionActivationSupportsImageWithMaxCount`: (number) Maximum number of images supported.
+- `NSExtensionActivationSupportsMovieWithMaxCount`: (number) Maximum number of movies supported.
+- `NSExtensionActivationSupportsFileWithMaxCount`: (number) Maximum number of files supported.
+- `NSExtensionActivationSupportsText`: (boolean) Whether text sharing is supported.
+
+When using a string, write a valid `SUBQUERY` expression. For example, this activation rule will make your app appear when the user shares a single image or video:
+
+```json
+{
+  "ios": {
+    "activationRules": "SUBQUERY ( extensionItems, $extensionItem, SUBQUERY( $extensionItem.attachments, $attachment, ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO \"public.image\" OR ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO \"public.movie\" ).@count == 1 ).@count == 1"
+  }
+}
+```
 
 If you do not specify any activation rules or omit the `ios` parent key, the config plugin will by default use the following configuration, which will make your app appear when the user shares a single web page or URL:
 
