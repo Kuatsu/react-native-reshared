@@ -1,10 +1,14 @@
-# 📡 react-native-reshared
+# 📡 react-native-reshared [DEPRECATED]
+
+> [!CAUTION]
+> This project is no longer maintained. For Expo, please consider using [expo-share-intent](https://github.com/achorein/expo-share-intent) instead.
 
 Receive share intents to your React Native app from iOS & Android – fully compatible with Expo
 
-![npm bundle size](https://img.shields.io/bundlephobia/min/react-native-reshared?style=flat-square) ![GitHub](https://img.shields.io/github/license/kuatsu/react-native-reshared?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/kuatsu/react-native-reshared?style=flat-square)
+![Maintenance](https://img.shields.io/maintenance/no/2024) ![npm bundle size](https://img.shields.io/bundlephobia/min/react-native-reshared?style=flat-square) ![GitHub](https://img.shields.io/github/license/kuatsu/react-native-reshared?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/kuatsu/react-native-reshared?style=flat-square)
 
-**⚠️ WARNING**: This project is still considered unstable. The API might change drastically in new versions. Please proceed with caution and report any issues you're encountering.
+> [!WARNING]
+> This project is still considered unstable. The API might change drastically in new versions. Please proceed with caution and report any issues you're encountering.
 
 ## Installation
 
@@ -46,7 +50,8 @@ npx patch-package
 yarn patch-package
 ```
 
-**Note**: There's an [open issue](https://github.com/expo/expo-cli/issues/4293) in the Expo repository regarding this problem. Once it's resolved, this step will no longer be necessary.
+> [!TIP]
+> There's an [open issue](https://github.com/expo/expo-cli/issues/4293) in the Expo repository regarding this problem. Once it's resolved, this step will no longer be necessary.
 
 ## Documentation
 
